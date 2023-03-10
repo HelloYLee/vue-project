@@ -1,9 +1,22 @@
 <script>
+import axios from 'axios'
+
+// Vue.prototype.$ajax = axios
+
 export default {
     data () {
         return {
 
         }
+    },
+    mounted() {
+        axios({
+            method: 'get',
+            url: 'src/assets/info.json'  //请求本地文件
+            // url: 'http://localhost:5173/src/assets/info.json'
+        }).then(res => {
+            console.log(res)
+        })
     }
 }
 </script>
